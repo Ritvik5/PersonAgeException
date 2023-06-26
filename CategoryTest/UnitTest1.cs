@@ -18,22 +18,38 @@ namespace CategoryTest
             Assert.AreEqual("Adults", result);
         }
 
+        //[TestMethod]
+        //public void GivenNullAge_ShouldReturn_Exception()
+        //{
+        //    try
+        //    {
+        //        //Arrange
+        //        int age = default;
+        //        PersonAge obj = new PersonAge(age);
+
+        //        //Act
+        //        string result = obj.GetAge();
+        //    }
+        //    catch(Exception ex)
+        //    {
+        //        //Assert
+        //        Assert.AreEqual(ex.Message, "Age cannot be null");
+        //    }
+        //}
+
         [TestMethod]
         public void GivenNullAge_ShouldReturn_Exception()
         {
+            int age = 10000;
             try
             {
-                //Arrange
-                int age = default;
-                PersonAge obj = new PersonAge(age);
-
-                //Act
-                string result = obj.GetAge();
+                PersonAge obj = new PersonAge(Convert.ToInt32(age));
+                string reult = obj.GetAge();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                //Assert
-                Assert.AreEqual(ex.Message, "Age cannot be null");
+                Assert.AreEqual(ex.Message, "Age cannot be Empty");
+                
             }
         }
     }

@@ -41,10 +41,10 @@ namespace PersonAgeException
                     return default;
                 }
             }
-            catch (NullReferenceException)
+            catch (Exception)
             {
 
-                throw new PersonAgeCustomeException(PersonAgeCustomeException.ExceptionType.NullMessage,"Age cannot be null");
+                throw new PersonAgeCustomeException(PersonAgeCustomeException.ExceptionType.EmptyMessage,"Age cannot be Empty");
             }
         }
     }
